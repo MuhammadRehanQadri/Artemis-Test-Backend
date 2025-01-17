@@ -2,18 +2,14 @@ import express from 'express';
 import blockRoutes from './routes/block';
 import dotenv from 'dotenv';
 import connectDB from "./database/db";
+import corsMiddleware from "./middlewares/cors";
 
 dotenv.config();
 
 const app = express();
 
 // Middleware to enable CORS
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
-});
+app.use(corsMiddleware);
 
 app.use(express.json());
 app.use('/api', blockRoutes);
