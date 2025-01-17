@@ -1,4 +1,4 @@
-This is a [Express.js](https://expressjs.com/) project
+This is an [Express.js](https://expressjs.com/) project
 
 ## Getting Started
 
